@@ -1,0 +1,29 @@
+name: LRP MDT
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'apps/lrp-mdt-bot/**'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/lrp-mdt-bot
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: apps/lrp-mdt-bot/package-lock.json
+
+      - run: npm ci
+
+      - run: node src/index.js
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
