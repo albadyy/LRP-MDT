@@ -1,5 +1,7 @@
-import { REST, Routes, SlashCommandBuilder } from 'discord.js';
+import discord from 'discord.js';
 import { getConfig, requireEnvironment } from './config.js';
+
+const { REST, Routes, SlashCommandBuilder } = discord;
 
 const config = getConfig();
 requireEnvironment(config, ['token', 'clientId', 'guildId']);

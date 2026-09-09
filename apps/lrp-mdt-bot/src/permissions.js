@@ -1,4 +1,6 @@
-import { PermissionFlagsBits } from 'discord.js';
+import discord from 'discord.js';
+
+const { PermissionFlagsBits } = discord;
 
 const LEVELS = ['none', 'cadet', 'officer', 'supervisor', 'chief', 'command'];
 

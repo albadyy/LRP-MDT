@@ -1,4 +1,7 @@
-import {
+import discord from 'discord.js';
+import { citizenSvg, dashboardSvg, recordsSvg, renderPng, tableSvg, vehicleSvg } from './render.js';
+
+const {
 	ActionRowBuilder,
 	AttachmentBuilder,
 	ButtonBuilder,
@@ -7,8 +10,7 @@ import {
 	StringSelectMenuBuilder,
 	TextInputBuilder,
 	TextInputStyle,
-} from 'discord.js';
-import { citizenSvg, dashboardSvg, recordsSvg, renderPng, tableSvg, vehicleSvg } from './render.js';
+} = discord;
 
 const imageName = 'lrp-mdt.png';
 

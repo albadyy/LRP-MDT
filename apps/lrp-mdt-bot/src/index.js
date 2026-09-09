@@ -1,9 +1,11 @@
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
-import { Client, Events, GatewayIntentBits } from 'discord.js';
+import discord from 'discord.js';
 import { getConfig, requireEnvironment, rootDirectory } from './config.js';
 import { createInteractionHandler } from './router.js';
 import { MdtStore } from './store.js';
+
+const { Client, Events, GatewayIntentBits } = discord;
 
 const config = getConfig();
 requireEnvironment(config, ['token']);
