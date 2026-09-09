@@ -25,6 +25,8 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      - run: pnpm turbo run build --filter=discord.js... --concurrency=4
+
       - run: pnpm --filter @lrp/mdt-bot start
         env:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
